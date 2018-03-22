@@ -1,6 +1,10 @@
 
-var tl1 = new TimelineMax();
-tl1.to('#txt', 2, {fontSize: 80});
+var tijd = new TimelineMax();
+tijd.to('#txt', 3, {fontSize: 80});
+
+
+TweenLite.to("#ster", 10, {x: 980});
+
 
 function startTime() {
     var today = new Date();
@@ -14,13 +18,13 @@ function startTime() {
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
 
  
-    if (h > 19 && h < 5) { 
+    if (h > 6 && h < 18) { 
         document.getElementById("day").innerHTML = "GOOD DAY";   
         document.getElementsByTagName('html')[0].style.backgroundImage = "url(' images/sky.jpg')";
 
     }
 
-    else if (h > 6 && h < 18) {
+    else if (h > 19 && h < 5) {
         document.getElementById("night").innerHTML = "GOOD NIGHT"; 
         document.getElementsByTagName('html')[0].style.backgroundImage = "url(' images/backgroundnight.jpg')";
 
