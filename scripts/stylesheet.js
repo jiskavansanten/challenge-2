@@ -1,10 +1,13 @@
 
+// Zorgt ervoor dat de tekst groter wordt
 var tijd = new TimelineMax();
 tijd.to('#txt', 3, {fontSize: 80});
 
+//Zorgt voor een bewegende ster
 
 TweenLite.to("#ster", 10, {x: 980});
 
+//geeft de tijd weer
 
 function startTime() {
     var today = new Date();
@@ -17,19 +20,21 @@ function startTime() {
     
     document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
 
- 
+ //Zorgt ervoor dat de achtergrond veranderd en dat de tekst GOOD DAY zegt
     if (h > 6 && h < 18) { 
         document.getElementById("day").innerHTML = "GOOD DAY";   
         document.getElementsByTagName('html')[0].style.backgroundImage = "url(' images/sky.jpg')";
 
     }
 
+    //Zorgt voor de nacht achtergrond en dat de tekst GOOD NIGHT zegt
     else if (h > 19 && h < 5) {
         document.getElementById("night").innerHTML = "GOOD NIGHT"; 
         document.getElementsByTagName('html')[0].style.backgroundImage = "url(' images/backgroundnight.jpg')";
 
     }
 
+    //zorgt voor de datum
     var t = setTimeout(startTime, 1000);
 }
 
@@ -41,7 +46,7 @@ function startTime() {
     return i;
 }
 
-
+            
             var today = new Date();
             var dd = today.getDate();
             var mm = today.getMonth()+1; //January is 0!
